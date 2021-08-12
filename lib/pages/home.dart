@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
-class InstagramHome extends StatelessWidget {
+class InstagramHome extends StatefulWidget {
+  const InstagramHome({Key? key}) : super(key: key);
+
+  @override
+  State<InstagramHome> createState() => _InstagramHomeState();
+}
+
+class _InstagramHomeState extends State<InstagramHome> {
+  int _selectedIndex = 0;
+
   final AppBar topBar = AppBar(
     title: Image.asset(
       "assets/images/insta_logo.png",
@@ -19,6 +28,12 @@ class InstagramHome extends StatelessWidget {
       ),
     ],
   );
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +78,9 @@ class InstagramHome extends StatelessWidget {
             label: "",
           ),
         ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.black,
+        onTap: _onItemTapped,
       ),
     );
   }
