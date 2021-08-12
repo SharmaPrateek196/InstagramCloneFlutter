@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InstagramHome extends StatelessWidget {
-  AppBar topBar = AppBar(
+  final AppBar topBar = AppBar(
     title: Image.asset(
       "assets/images/insta_logo.png",
       height: 40.0,
