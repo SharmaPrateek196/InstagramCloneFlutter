@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter/pages/add.dart';
 import 'package:instagram_flutter/pages/favourite.dart';
-import 'package:instagram_flutter/pages/feed.dart';
+
 import 'package:instagram_flutter/pages/profile.dart';
 import 'package:instagram_flutter/pages/search.dart';
+
+import 'feed/feed.dart';
 
 class InstagramHome extends StatefulWidget {
   const InstagramHome({Key? key}) : super(key: key);
