@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_flutter/pages/add.dart';
+import 'package:instagram_flutter/pages/favourite.dart';
+import 'package:instagram_flutter/pages/feed.dart';
+import 'package:instagram_flutter/pages/profile.dart';
+import 'package:instagram_flutter/pages/search.dart';
 
 class InstagramHome extends StatefulWidget {
   const InstagramHome({Key? key}) : super(key: key);
@@ -29,6 +34,14 @@ class _InstagramHomeState extends State<InstagramHome> {
     ],
   );
 
+  final List<Widget> bottomBarScreens = [
+    FeedsScreen(),
+    SearchScreen(),
+    AddScreen(),
+    FavouriteScreen(),
+    ProfileScreen(),
+  ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -39,7 +52,7 @@ class _InstagramHomeState extends State<InstagramHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: topBar,
-      body: Container(),
+      body: bottomBarScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
