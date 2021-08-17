@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_flutter/pages/home.dart';
+
+import 'pages/tabscreens/home.dart';
 
 void main() {
   runApp(Insta());

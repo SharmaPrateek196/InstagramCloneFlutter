@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_flutter/pages/feed/stories.dart';
 
 class FeedsScreen extends StatefulWidget {
   const FeedsScreen({Key? key}) : super(key: key);
@@ -11,8 +10,13 @@ class FeedsScreen extends StatefulWidget {
 class _FeedsScreenState extends State<FeedsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: new StoriesHeading(),
+    return ListView.builder(
+      itemCount: 12,
+      itemBuilder: (BuildContext context, int index) {
+        return Container(
+          child: Center(child: Text('Post #${index}')),
+        );
+      },
     );
   }
 }
