@@ -12,7 +12,7 @@ class _FeedsScreenState extends State<FeedsScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: getStoriesHeading(),
+      child: new StoriesHeading(),
     );
   }
 }

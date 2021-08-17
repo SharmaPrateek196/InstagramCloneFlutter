@@ -14,34 +14,55 @@ class _StoriesPalatteState extends State<StoriesPalatte> {
   }
 }
 
-Widget getStoriesHeading() {
-  return Container(
-    margin: EdgeInsets.all(10),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          "Stories",
-          textAlign: TextAlign.start,
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        Text(
-          "Watch All",
-          textAlign: TextAlign.end,
-          style: TextStyle(fontWeight: FontWeight.bold),
-        )
-      ],
-    ),
-  );
+class StoriesHeading extends StatelessWidget {
+  const StoriesHeading({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "Stories",
+            textAlign: TextAlign.start,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Text(
+            "Watch All",
+            textAlign: TextAlign.end,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          )
+        ],
+      ),
+    );
+  }
 }
 
-Widget getStoryThumbnail(String url, bool hasSeen) {
-  return Container(
-    width: 80,
-    height: 80,
-    decoration: BoxDecoration(
-      shape: BoxShape.circle,
-      image: DecorationImage(image: NetworkImage(url), fit: BoxFit.fill),
-    ),
-  );
+class StoryThumbnail extends StatefulWidget {
+  const StoryThumbnail(
+      {Key? key, required this.hasSeen, required this.imageUrl})
+      : super(key: key);
+
+  final bool hasSeen;
+  final String imageUrl;
+
+  @override
+  _StoryThumbnailState createState() => _StoryThumbnailState();
+}
+
+class _StoryThumbnailState extends State<StoryThumbnail> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 80,
+      height: 80,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        image: DecorationImage(
+            image: NetworkImage(widget.imageUrl), fit: BoxFit.fill),
+      ),
+    );
+  }
 }
