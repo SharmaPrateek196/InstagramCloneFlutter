@@ -13,10 +13,11 @@ class _InstagramPostState extends State<InstagramPost> {
     return Column(
       children: [
         new PostHeader(),
-        Image(
-          height: 300,
-          image: NetworkImage(
-              "https://images.unsplash.com/photo-1607981513835-f5cb460cbc4a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"),
+        Image.asset(
+          "assets/images/lappyimg.jpeg",
+          fit: BoxFit.fill,
+          height: 350,
+          width: double.infinity,
         ),
       ],
     );
@@ -47,7 +48,7 @@ class PostHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 10, right: 10),
+      padding: EdgeInsets.all(10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
