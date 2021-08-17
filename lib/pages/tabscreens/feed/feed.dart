@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_flutter/pages/tabscreens/feed/post.dart';
 
 class FeedsScreen extends StatefulWidget {
   const FeedsScreen({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _FeedsScreenState extends State<FeedsScreen> {
       itemCount: 12,
       itemBuilder: (BuildContext context, int index) {
         return Container(
-          child: Center(child: Text('Post #${index}')),
+          child: InstagramPost(),
         );
       },
     );
