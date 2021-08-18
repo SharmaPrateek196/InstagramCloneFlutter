@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class StoriesPalatte extends StatefulWidget {
   const StoriesPalatte({Key? key}) : super(key: key);
@@ -10,7 +11,30 @@ class StoriesPalatte extends StatefulWidget {
 class _StoriesPalatteState extends State<StoriesPalatte> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+        StoriesHeading(),
+        Container(
+          height: 70,
+          alignment: Alignment.center,
+          child: Expanded(
+            child: new ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 12,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  child: StoryThumbnail(
+                    hasSeen: true,
+                    imageUrl:
+                        "https://pbs.twimg.com/profile_images/799664820848992256/QX3Pjg3V_400x400.jpg",
+                  ),
+                );
+              },
+            ),
+          ),
+        )
+      ]),
+    );
   }
 }
 
@@ -21,19 +45,23 @@ class StoriesHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
         children: [
-          Text(
-            "Stories",
-            textAlign: TextAlign.start,
-            style: TextStyle(fontWeight: FontWeight.bold),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Stories",
+                textAlign: TextAlign.start,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "Watch All",
+                textAlign: TextAlign.end,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              )
+            ],
           ),
-          Text(
-            "Watch All",
-            textAlign: TextAlign.end,
-            style: TextStyle(fontWeight: FontWeight.bold),
-          )
         ],
       ),
     );
@@ -56,8 +84,8 @@ class _StoryThumbnailState extends State<StoryThumbnail> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 80,
-      height: 80,
+      width: 60,
+      height: 60,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(
