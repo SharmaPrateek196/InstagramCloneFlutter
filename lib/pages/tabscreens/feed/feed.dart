@@ -12,25 +12,27 @@ class FeedsScreen extends StatefulWidget {
 class _FeedsScreenState extends State<FeedsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          StoriesPalatte(),
-          Expanded(
-            child: Container(
-              height: 100,
-              child: ListView.builder(
-                itemCount: 12,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    child: InstagramPost(),
-                  );
-                },
-              ),
-            ),
-          )
-        ],
-      ),
-    );
+    return PostFooter();
+
+    // return Container(
+    //   child: Column(
+    //     children: [
+    //       StoriesPalatte(),
+    //       Expanded(
+    //         child: Container(
+    //           height: 100,
+    //           child: ListView.builder(
+    //             itemCount: 12,
+    //             itemBuilder: (BuildContext context, int index) {
+    //               return Container(
+    //                 child: InstagramPost(),
+    //               );
+    //             },
+    //           ),
+    //         ),
+    //       )
+    //     ],
+    //   ),
+    // );
   }
 }

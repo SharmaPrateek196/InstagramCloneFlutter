@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class InstagramPost extends StatefulWidget {
   const InstagramPost({Key? key}) : super(key: key);
@@ -70,6 +71,46 @@ class PostHeader extends StatelessWidget {
             ],
           ),
           new Icon(Icons.more_vert)
+        ],
+      ),
+    );
+  }
+}
+
+class PostFooter extends StatefulWidget {
+  const PostFooter({Key? key}) : super(key: key);
+
+  @override
+  _PostFooterState createState() => _PostFooterState();
+}
+
+class _PostFooterState extends State<PostFooter> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(FontAwesomeIcons.heart),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Icon(FontAwesomeIcons.comment),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Icon(FontAwesomeIcons.paperPlane)
+                ],
+              ),
+              Icon(FontAwesomeIcons.bookmark)
+            ],
+          ),
         ],
       ),
     );
