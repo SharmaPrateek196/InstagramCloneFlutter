@@ -58,6 +58,9 @@ class PostHeader extends StatelessWidget {
                 imageUrl:
                     "https://pbs.twimg.com/profile_images/799664820848992256/QX3Pjg3V_400x400.jpg",
               ),
+              SizedBox(
+                width: 10,
+              ),
               new Text(
                 "Username",
                 style: TextStyle(
