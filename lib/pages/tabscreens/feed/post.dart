@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+double postHeaderDpSize = 50;
+double commenterDpSize = 20;
+
 class InstagramPost extends StatefulWidget {
   const InstagramPost({Key? key}) : super(key: key);
 
@@ -26,15 +29,22 @@ class _InstagramPostState extends State<InstagramPost> {
 }
 
 class ProfilePicture extends StatelessWidget {
-  const ProfilePicture({Key? key, required this.imageUrl}) : super(key: key);
+  const ProfilePicture(
+      {Key? key,
+      required this.imageUrl,
+      required this.width,
+      required this.height})
+      : super(key: key);
 
   final String imageUrl;
+  final double width;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50,
-      height: 50,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(image: NetworkImage(imageUrl), fit: BoxFit.fill),
@@ -58,6 +68,8 @@ class PostHeader extends StatelessWidget {
               new ProfilePicture(
                 imageUrl:
                     "https://pbs.twimg.com/profile_images/799664820848992256/QX3Pjg3V_400x400.jpg",
+                width: postHeaderDpSize,
+                height: postHeaderDpSize,
               ),
               SizedBox(
                 width: 10,
@@ -111,6 +123,19 @@ class _PostFooterState extends State<PostFooter> {
               Icon(FontAwesomeIcons.bookmark)
             ],
           ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            children: [
+              ProfilePicture(
+                imageUrl:
+                    "https://pbs.twimg.com/profile_images/799664820848992256/QX3Pjg3V_400x400.jpg",
+                width: commenterDpSize,
+                height: commenterDpSize,
+              )
+            ],
+          )
         ],
       ),
     );
