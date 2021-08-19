@@ -133,8 +133,17 @@ class _PostFooterState extends State<PostFooter> {
                     "https://pbs.twimg.com/profile_images/799664820848992256/QX3Pjg3V_400x400.jpg",
                 width: commenterDpSize,
                 height: commenterDpSize,
-              )
+              ),
+              SizedBox(
+                width: 10,
+                height: 2,
+              ),
+              Text("Liked by be_like__prateek and 97 others"),
             ],
+          ),
+          Text(
+            "View all 1,256 comments",
+            style: TextStyle(color: Colors.grey),
           )
         ],
       ),
