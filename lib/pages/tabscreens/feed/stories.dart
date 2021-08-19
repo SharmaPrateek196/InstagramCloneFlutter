@@ -12,6 +12,7 @@ class _StoriesPalatteState extends State<StoriesPalatte> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(10),
       child: Column(mainAxisSize: MainAxisSize.min, children: [
         StoriesHeading(),
         Container(
@@ -44,7 +45,6 @@ class StoriesHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
       child: Column(
         children: [
           Row(
@@ -84,8 +84,8 @@ class _StoryThumbnailState extends State<StoryThumbnail> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 60,
-      height: 60,
+      width: 55,
+      height: 55,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(

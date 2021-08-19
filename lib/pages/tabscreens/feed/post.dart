@@ -23,6 +23,7 @@ class _InstagramPostState extends State<InstagramPost> {
           height: 350,
           width: double.infinity,
         ),
+        PostFooter()
       ],
     );
   }
@@ -144,6 +145,9 @@ class _PostFooterState extends State<PostFooter> {
           Text(
             "View all 1,256 comments",
             style: TextStyle(color: Colors.grey),
+          ),
+          SizedBox(
+            height: 20,
           )
         ],
       ),
