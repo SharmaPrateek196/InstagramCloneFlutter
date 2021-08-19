@@ -17,16 +17,21 @@ class _FeedsScreenState extends State<FeedsScreen> {
     return Container(
       child: Column(
         children: [
-          StoriesPalatte(),
           Expanded(
             child: Container(
               height: 100,
               child: ListView.builder(
                 itemCount: 12,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    child: InstagramPost(),
-                  );
+                  if (index == 0) {
+                    return Container(
+                      child: StoriesPalatte(),
+                    );
+                  } else {
+                    return Container(
+                      child: InstagramPost(),
+                    );
+                  }
                 },
               ),
             ),
