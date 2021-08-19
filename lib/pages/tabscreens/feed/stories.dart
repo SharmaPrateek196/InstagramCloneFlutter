@@ -84,6 +84,7 @@ class _StoryThumbnailState extends State<StoryThumbnail> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.fromLTRB(3, 0, 3, 0),
       width: 55,
       height: 55,
       decoration: BoxDecoration(
