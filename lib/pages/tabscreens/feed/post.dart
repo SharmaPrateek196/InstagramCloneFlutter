@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:instagram_flutter/data/feeds_data.dart';
 import 'package:instagram_flutter/pages/imageviewer.dart';
 
 double postHeaderDpSize = 50;
 double commenterDpSize = 20;
 
 class InstagramPost extends StatefulWidget {
-  const InstagramPost({Key? key}) : super(key: key);
+  InstagramPost(this.postModel);
+
+  PostModel postModel;
 
   @override
   _InstagramPostState createState() => _InstagramPostState();
@@ -122,7 +125,10 @@ class _PostFooterState extends State<PostFooter> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Icon(FontAwesomeIcons.heart),
+                  IconButton(
+                    icon: Icon(FontAwesomeIcons.heart),
+                    onPressed: () {},
+                  ),
                   SizedBox(
                     width: 15,
                   ),
@@ -133,7 +139,10 @@ class _PostFooterState extends State<PostFooter> {
                   Icon(FontAwesomeIcons.paperPlane)
                 ],
               ),
-              Icon(FontAwesomeIcons.bookmark)
+              IconButton(
+                icon: Icon(FontAwesomeIcons.bookmark),
+                onPressed: () {},
+              )
             ],
           ),
           SizedBox(

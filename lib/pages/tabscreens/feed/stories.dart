@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:instagram_flutter/data/feeds_data.dart';
 
 class StoriesPalatte extends StatefulWidget {
-  const StoriesPalatte({Key? key}) : super(key: key);
+  StoriesPalatte();
 
   @override
   _StoriesPalatteState createState() => _StoriesPalatteState();

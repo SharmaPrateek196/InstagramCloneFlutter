@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_flutter/data/feeds_data.dart';
 import 'package:instagram_flutter/pages/tabscreens/feed/post.dart';
 import 'package:instagram_flutter/pages/tabscreens/feed/stories.dart';
 
@@ -21,7 +22,7 @@ class _FeedsScreenState extends State<FeedsScreen> {
             child: Container(
               height: 100,
               child: ListView.builder(
-                itemCount: 12,
+                itemCount: feedData.length,
                 itemBuilder: (BuildContext context, int index) {
                   if (index == 0) {
                     return Container(
@@ -29,7 +30,7 @@ class _FeedsScreenState extends State<FeedsScreen> {
                     );
                   } else {
                     return Container(
-                      child: InstagramPost(),
+                      child: InstagramPost(feedData[index]),
                     );
                   }
                 },
