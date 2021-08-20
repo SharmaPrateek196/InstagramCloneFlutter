@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:instagram_flutter/pages/imageviewer.dart';
 
 double postHeaderDpSize = 50;
 double commenterDpSize = 20;
@@ -17,11 +18,22 @@ class _InstagramPostState extends State<InstagramPost> {
     return Column(
       children: [
         new PostHeader(),
-        Image.asset(
-          "assets/images/lappyimg.jpeg",
-          fit: BoxFit.fill,
-          height: 350,
-          width: double.infinity,
+        InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    ImageViewer(assetPath: "assets/images/lappyimg.jpeg"),
+              ),
+            );
+          },
+          child: Image.asset(
+            "assets/images/lappyimg.jpeg",
+            fit: BoxFit.fill,
+            height: 350,
+            width: double.infinity,
+          ),
         ),
         PostFooter()
       ],

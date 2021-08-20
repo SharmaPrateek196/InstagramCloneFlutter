@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_flutter/pages/imageviewer.dart';
 
 import 'pages/tabscreens/home.dart';
 
@@ -12,7 +13,10 @@ class Insta extends StatelessWidget {
     return MaterialApp(
       title: "Instagram",
       debugShowCheckedModeBanner: false,
-      home: new InstagramHome(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const InstagramHome(),
+      },
     );
   }
 }
